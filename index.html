@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Network | Solusi Digital Masa Depan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">MY<span>NETWORK</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#pricing">Harga</a></li>
+                <li><button class="btn-login" id="loginBtn">Masuk</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge-new">Baru: Fiber Optic 2.0 Kini Tersedia</span>
+            <h1>Koneksi Tanpa Batas<br>Untuk <span>Bisnis Anda</span></h1>
+            <p>Integrasi infrastruktur jaringan cerdas dan sistem keamanan siber terpadu untuk mengakselerasi transformasi digital Anda.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/message/7KAHDD5FTUZZG1" target="_blank" class="btn btn-primary">Mulai Sekarang</a>
+                <a href="#services" class="btn btn-secondary">Lihat Layanan</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">Layanan Kami</span>
+                <h2>Solusi Digital Terpadu</h2>
+                <div class="line"></div>
+            </div>
+            <div class="grid-services">
+                <div class="card">
+                    <div class="icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <h3>Fiber Connect</h3>
+                    <p>Internet pita lebar 100% Fiber Optik dengan kestabilan tanpa kompromi.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box"><i class="fa-solid fa-shield-virus"></i></div>
+                    <h3>Cyber Security</h3>
+                    <p>Proteksi ancaman siber berlapis untuk menjaga aset data perusahaan Anda.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                    <h3>Cloud Managed</h3>
+                    <p>Manajemen infrastruktur IT berbasis cloud yang fleksibel dan efisien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Paket Berlangganan</h2>
+                <p>Harga transparan tanpa biaya tersembunyi.</p>
+            </div>
+            <div class="grid-pricing">
+                <div class="price-card">
+                    <h3>Home Basic</h3>
+                    <div class="amount">Rp 250k<span>/bln</span></div>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-circle-check"></i> Speed 30 Mbps</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Unlimited FUP</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 24/7 Support</li>
+                    </ul>
+                    <a href="https://wa.me/message/7KAHDD5FTUZZG1" class="btn btn-outline">Pilih Paket</a>
+                </div>
+                <div class="price-card popular">
+                    <div class="ribbon">Terpopuler</div>
+                    <h3>Business Pro</h3>
+                    <div class="amount">Rp 750k<span>/bln</span></div>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-circle-check"></i> Speed 100 Mbps</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Dedicated IP</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Managed Security</li>
+                    </ul>
+                    <a href="https://wa.me/message/7KAHDD5FTUZZG1" class="btn btn-primary">Pilih Paket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cta">
+                <h2>Siap Melangkah Maju?</h2>
+                <a href="https://wa.me/message/7KAHDD5FTUZZG1" target="_blank" class="btn btn-primary btn-lg">Hubungi via WhatsApp</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 My Network Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-container">
+                <h2 id="modalTitle">Selamat Datang</h2>
+                <form>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Masukkan email Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Lanjutkan</button>
+                </form>
+                <p class="auth-switch">Belum punya akun? <span id="toggleAuth">Daftar</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
