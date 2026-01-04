@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Network | Solusi Digital Masa Depan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
     <nav id="navbar">
@@ -17,19 +21,42 @@
                 <li><a href="#home">Beranda</a></li>
                 <li><a href="#services">Layanan</a></li>
                 <li><a href="#pricing">Harga</a></li>
-                <li><button class="btn-login" id="loginBtn">Masuk</button></li>
+                <li><a href="#pengembang">Team Work</a></li>
             </ul>
+            <div class="nav-left">
+                <button class="btn-login" id="loginBtn">Masuk</button>
+                <button class="btn-login" id="registerBtn">daftar</button>
+            </div>
+
+
+            <!-- Avatar/Profile -->
+            <div id="userProfile" class="user-profile hidden">
+                <div id="profileToggle" class="profile-trigger">
+                    <img src="img/profil.jpg" alt="avatar" class="avatar">
+                    <span id="userName">User</span>
+                </div>
+                <div class="dropdown hidden" id="profileDropdown">
+                    <ul>
+                        <li><i class="fa-solid fa-user"></i> Profil</li>
+                        <li><i class="fa-solid fa-gear"></i> Pengaturan</li>
+                        <li id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
+
 
     <header id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <span class="badge-new">Baru: Fiber Optic 2.0 Kini Tersedia</span>
             <h1>Koneksi Tanpa Batas<br>Untuk <span>Bisnis Anda</span></h1>
-            <p>Integrasi infrastruktur jaringan cerdas dan sistem keamanan siber terpadu untuk mengakselerasi transformasi digital Anda.</p>
+            <p>Integrasi infrastruktur jaringan cerdas dan sistem keamanan siber terpadu untuk mengakselerasi
+                transformasi digital Anda.</p>
             <div class="hero-btns">
-                <a href="https://wa.me/message/7KAHDD5FTUZZG1" target="_blank" class="btn btn-primary">Mulai Sekarang</a>
+                <a href="https://wa.me/message/7KAHDD5FTUZZG1" target="_blank" class="btn btn-primary">Mulai
+                    Sekarang</a>
                 <a href="#services" class="btn btn-secondary">Lihat Layanan</a>
             </div>
         </div>
@@ -94,11 +121,118 @@
         </div>
     </section>
 
+    <section class="developer-profile" id="pengembang">
+        <h4 class="title">Our Team</h4>
+
+        <!-- Kontainer dengan grid -->
+        <div class="profile-grid">
+
+            <!-- Pengembang 1 -->
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="img/profil.jpg" alt="Pengembang 1">
+                </div>
+                <div class="profile-info">
+                    <h5>fadel</h5>
+                    <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/rian-akhlul-fadli-34b4bb33b/" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/win-ter-ethreal" target="_blank">GitHub</a>
+                        <a href="mailto:rianakhlulfadli@gmamil.com">Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pengembang 2 -->
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="img/profil.jpg" alt="Pengembang 2">
+                </div>
+                <div class="profile-info">
+                    <h5>Shofwatun Najwa</h5>
+                    <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/najwa-shofwatun-93862133b/" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/shofwatunnajwa" target="_blank">GitHub</a>
+                        <a href="mailto:Shofwatunnajwa22@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pengembang 3 -->
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="img/profil.jpg" alt="Pengembang 3">
+                </div>
+                <div class="profile-info">
+                    <h5>Nabib Khalish Alfayadh</h5>
+                    <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
+                    <div class="social-links">
+                        <a href="https://id.linkedin.com/in/nabib-khalis-bb113133b" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/nabobbieberr" target="_blank">GitHub</a>
+                        <a href="mailto:bibskhalis@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pengembang 4 -->
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="img/profil.jpg" alt="Pengembang 4">
+                </div>
+                <div class="profile-info">
+                    <h5>Ahmad Yudistira Ramdhany</h5>
+                    <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/ahmad-yudistira-ramdhany-5b934633b"
+                            target="_blank">LinkedIn</a>
+                        <a href="https://github.com/Ahmadyudistiraramdhany" target="_blank">GitHub</a>
+                        <a href="mailto:ahmadyudistiraramdhany@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pengembang 5 -->
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="img/profil.jpg" alt="Pengembang 5">
+                </div>
+                <div class="profile-info">
+                    <h5>Nama Pengembang 5</h5>
+                    <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank">LinkedIn</a>
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="mailto:dev5@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pengembang 6 -->
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="img/profil.jpg" alt="Pengembang 6">
+                </div>
+                <div class="profile-info">
+                    <h5>Nama Pengembang 6</h5>
+                    <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank">LinkedIn</a>
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="mailto:dev6@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-cta">
                 <h2>Siap Melangkah Maju?</h2>
-                <a href="https://wa.me/message/7KAHDD5FTUZZG1" target="_blank" class="btn btn-primary btn-lg">Hubungi via WhatsApp</a>
+                <a href="https://wa.me/message/7KAHDD5FTUZZG1" target="_blank" class="btn btn-primary btn-lg">Hubungi
+                    via WhatsApp</a>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 My Network Project. All Rights Reserved.</p>
@@ -106,27 +240,37 @@
         </div>
     </footer>
 
+    <!-- Modal Login/Register -->
     <div id="authModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="auth-container">
                 <h2 id="modalTitle">Selamat Datang</h2>
-                <form>
+                <form id="authForm">
+                    <div class="form-group register-only hidden">
+                        <label>Nama Pengguna</label>
+                        <input type="text" id="authName" placeholder="Masukkan nama Anda">
+                    </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" placeholder="Masukkan email Anda" required>
+                        <input type="email" id="authEmail" placeholder="Masukkan email Anda" required>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" placeholder="••••••••" required>
+                        <input type="password" id="authPassword" placeholder="••••••••" required>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Lanjutkan</button>
+                    <button type="submit" class="btn btn-primary btn-full" id="authSubmit">Masuk</button>
                 </form>
-                <p class="auth-switch">Belum punya akun? <span id="toggleAuth">Daftar</span></p>
+                <p class="auth-switch">
+                    <span id="toggleAuth" class="btn-switch">Daftar</span>
+                </p>
             </div>
         </div>
     </div>
 
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
