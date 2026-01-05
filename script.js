@@ -15,13 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoutBtn = document.getElementById('logoutBtn');
     const profileToggle = document.getElementById('profileToggle');
     const profileDropdown = document.getElementById('profileDropdown');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLeft = document.querySelector('.nav-left');
+
+
 
     let isLogin = true;
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('active', window.scrollY > 100);
+    menuToggle.addEventListener('click', () => {
+        navLeft.classList.toggle('active'); // ini penting!
     });
+
+
+
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -109,3 +115,20 @@ document.addEventListener('DOMContentLoaded', () => {
         userProfile.classList.remove('hidden');
     }
 });
+
+let lastScrollTop = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // Scroll ke bawah → sembunyikan navbar
+        navbar.style.transform = "translateY(-100%)";
+    } else {
+        // Scroll ke atas → tampilkan navbar
+        navbar.style.transform = "translateY(0)";
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // cegah nilai negatif
+});
+

@@ -17,32 +17,37 @@
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">MY<span>NETWORK</span></div>
-            <ul class="nav-links">
+            <div class="menu-toggle" id="menuToggle">☰</div>
+
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Beranda</a></li>
                 <li><a href="#services">Layanan</a></li>
                 <li><a href="#pricing">Harga</a></li>
                 <li><a href="#pengembang">Team Work</a></li>
             </ul>
+
             <div class="nav-left">
                 <button class="btn-login" id="loginBtn">Masuk</button>
-                <button class="btn-login" id="registerBtn">daftar</button>
+                <button class="btn-login" id="registerBtn">Daftar</button>
             </div>
 
-
-            <!-- Avatar/Profile -->
             <div id="userProfile" class="user-profile hidden">
-                <div id="profileToggle" class="profile-trigger">
-                    <img src="img/profil.jpg" alt="avatar" class="avatar">
-                    <span id="userName">User</span>
-                </div>
-                <div class="dropdown hidden" id="profileDropdown">
-                    <ul>
-                        <li><i class="fa-solid fa-user"></i> Profil</li>
-                        <li><i class="fa-solid fa-gear"></i> Pengaturan</li>
-                        <li id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</li>
-                    </ul>
-                </div>
+            <div id="profileToggle" class="profile-trigger">
+                <img src="img/profil.jpg" alt="avatar" class="avatar">
+                <span id="userName">User</span>
             </div>
+            <div class="dropdown hidden" id="profileDropdown">
+                <ul>
+                    <li><i class="fa-solid fa-user"></i> Profil</li>
+                    <li><i class="fa-solid fa-gear"></i> Pengaturan</li>
+                    <li id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</li>
+                </ul>
+            </div>
+        </div>            
+        </div>
+
+        <!-- Avatar/Profile -->
+        
         </div>
     </nav>
 
@@ -130,15 +135,15 @@
             <!-- Pengembang 1 -->
             <div class="profile-container">
                 <div class="profile-img">
-                    <img src="img/profil.jpg" alt="Pengembang 1">
+                    <img src="img/perdi.jpeg" alt="Pengembang 1">
                 </div>
                 <div class="profile-info">
-                    <h5>fadel</h5>
+                    <h5>Ferdy Pratama</h5>
                     <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/rian-akhlul-fadli-34b4bb33b/" target="_blank">LinkedIn</a>
                         <a href="https://github.com/win-ter-ethreal" target="_blank">GitHub</a>
-                        <a href="mailto:rianakhlulfadli@gmamil.com">Email</a>
+                        <a href="mailto:0110224241@student.nurulfikri.ac.id"  class="text-gray-900 hover:underline">Email</a>
                     </div>
                 </div>
             </div>
@@ -146,15 +151,15 @@
             <!-- Pengembang 2 -->
             <div class="profile-container">
                 <div class="profile-img">
-                    <img src="img/profil.jpg" alt="Pengembang 2">
+                    <img src="img/jojo.jpeg" alt="Pengembang 2">
                 </div>
                 <div class="profile-info">
-                    <h5>Shofwatun Najwa</h5>
+                    <h5>Jonathan Hibran Ramadhan</h5>
                     <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/najwa-shofwatun-93862133b/" target="_blank">LinkedIn</a>
-                        <a href="https://github.com/shofwatunnajwa" target="_blank">GitHub</a>
-                        <a href="mailto:Shofwatunnajwa22@gmail.com">Email</a>
+                        <a href="www.linkedin.com/in/jonathan-hibran-ramadhan-184b61233" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/JOJO151005" target="_blank">GitHub</a>
+                        <a href="mailto:0110224216@student.nurulfikri.ac.id">Email</a>
                     </div>
                 </div>
             </div>
@@ -162,15 +167,15 @@
             <!-- Pengembang 3 -->
             <div class="profile-container">
                 <div class="profile-img">
-                    <img src="img/profil.jpg" alt="Pengembang 3">
+                    <img src="img/delpa.jpeg" alt="Pengembang 3">
                 </div>
                 <div class="profile-info">
-                    <h5>Nabib Khalish Alfayadh</h5>
+                    <h5>Fadhel Yihua Rafael</h5>
                     <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
                     <div class="social-links">
-                        <a href="https://id.linkedin.com/in/nabib-khalis-bb113133b" target="_blank">LinkedIn</a>
-                        <a href="https://github.com/nabobbieberr" target="_blank">GitHub</a>
-                        <a href="mailto:bibskhalis@gmail.com">Email</a>
+                        <a href="https://www.linkedin.com/in/fadhel-rafael-559706277/" target="_blank">LinkedIn</a>
+                        <a href=" https://github.com/FadhelYihuaRafael" target="_blank">GitHub</a>
+                        <a href="mailto:0110224147@student.nurulfikri.ac.id">Email</a>
                     </div>
                 </div>
             </div>
@@ -178,16 +183,16 @@
             <!-- Pengembang 4 -->
             <div class="profile-container">
                 <div class="profile-img">
-                    <img src="img/profil.jpg" alt="Pengembang 4">
+                    <img src="img/yanyan.jpeg" alt="Pengembang 4">
                 </div>
                 <div class="profile-info">
-                    <h5>Ahmad Yudistira Ramdhany</h5>
+                    <h5>Rian Akhlul Fadli</h5>
                     <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/ahmad-yudistira-ramdhany-5b934633b"
+                        <a href="https://www.linkedin.com/in/rian-akhlul-fadli-34b4bb33b/"
                             target="_blank">LinkedIn</a>
-                        <a href="https://github.com/Ahmadyudistiraramdhany" target="_blank">GitHub</a>
-                        <a href="mailto:ahmadyudistiraramdhany@gmail.com">Email</a>
+                        <a href="https://github.com/win-ter-ethreal" target="_blank">GitHub</a>
+                        <a href="mailto:0110224211@student.nurulfikri.ac.id">Email</a>
                     </div>
                 </div>
             </div>
@@ -195,14 +200,14 @@
             <!-- Pengembang 5 -->
             <div class="profile-container">
                 <div class="profile-img">
-                    <img src="img/profil.jpg" alt="Pengembang 5">
+                    <img src="img/pam.jpeg" alt="Pengembang 5">
                 </div>
                 <div class="profile-info">
-                    <h5>Nama Pengembang 5</h5>
+                    <h5>Afriid Ahira Mulya</h5>
                     <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
                     <div class="social-links">
-                        <a href="#" target="_blank">LinkedIn</a>
-                        <a href="#" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/afriid-ahira-mulya-0863a433b/" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/afriid1238" target="_blank">GitHub</a>
                         <a href="mailto:dev5@gmail.com">Email</a>
                     </div>
                 </div>
@@ -211,15 +216,15 @@
             <!-- Pengembang 6 -->
             <div class="profile-container">
                 <div class="profile-img">
-                    <img src="img/profil.jpg" alt="Pengembang 6">
+                    <img src="img/yoga.jpeg" alt="Pengembang 6">
                 </div>
                 <div class="profile-info">
-                    <h5>Nama Pengembang 6</h5>
+                    <h5>Muhammad Yoga Dwi Febrian</h5>
                     <p>Saya adalah mahasiswa Sekolah Tinggi Terpadu Nurul Fikri.</p>
                     <div class="social-links">
-                        <a href="#" target="_blank">LinkedIn</a>
-                        <a href="#" target="_blank">GitHub</a>
-                        <a href="mailto:dev6@gmail.com">Email</a>
+                        <a href="https://www.linkedin.com/in/yoga-yoga-00b51033b/" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/Yogaalah" target="_blank">GitHub</a>
+                        <a href="mailto:yoga.kerend@gmail.com">Email</a>
                     </div>
                 </div>
             </div>
@@ -271,6 +276,14 @@
 
 
     <script src="script.js"></script>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>

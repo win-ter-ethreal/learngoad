@@ -25,11 +25,34 @@ body {
 nav {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    padding: 20px 0;
-    transition: var(--transition);
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    /* hitam transparan (0.7 = 70% opacity) */
+    /* teks putih */
+    transition: all 0.3s ease;
+
+
+
+
 }
+
+#navbar a {
+    color: #ffffff;
+    /* link putih */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#navbar a:hover {
+    color: #cccccc;
+    /* hover abu-abu */
+}
+
+
 
 nav.active {
     background: rgba(255, 255, 255, 0.9);
@@ -46,6 +69,7 @@ nav.active {
     align-items: center;
     position: relative;
     padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -112,13 +136,7 @@ nav.active {
     gap: 10px;
     cursor: pointer;
     position: relative;
-}
-
-.user-profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: relative;
+    margin-left: auto;
 }
 
 .profile-trigger {
@@ -636,4 +654,35 @@ nav.active {
 
 .hidden {
     display: none;
+}
+
+/* Tombol garis tiga */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--dark);
+}
+
+/* Responsif: layar kecil */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links,
+    .nav-left {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: var(--white);
+        padding: 10px 0;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .nav-links.active,
+    .nav-left.active {
+        display: flex;
+    }
 }
