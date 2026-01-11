@@ -21,30 +21,22 @@ jobs:
           scan-ref: '.'
           trivy-config: trivy.yaml
           severity: 'CRITICAL,HIGH'
-          exit-code: 1 # Gagal jika ada isu Critical
+          exit-code: 1 # Gagada isu Critical
 
   # TAHAP 2: DEPLOYMENT (CD)
   deploy:
-    needs: security-check # Hanya jalan jika security-check SUKSES
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to VPS via SSH
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: 22
-          script: |
-            # Masuk ke folder project di server
-            cd /mnt/z/learngoad/learngoad-main
-            
-            # Tarik kode terbaru dari GitHub
-            git pull origin main
-            
-            # Restart Container (Contoh: Nginx/Web Server)
-            # Sesuaikan nama container kamu
-            docker restart my-website-container
-            
-            # Cek status container setelah restart
-            docker ps
+  needs: security-check
+  runs-on: ubuntu-latest
+  steps:
+    - name: Deploy to VPS via SSH
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd /var/www/html/learngoad
+          git pull origin main
+          docker restart my-website-container
+          docker ps
