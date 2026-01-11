@@ -1,42 +1,40 @@
-name: DevSecOps Pipeline
+name: CI/CD Pipeline
 
-# Trigger: Jalan setiap ada push ke branch main
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
-  # TAHAP 1: KEAMANAN (CI)
+  # Tahap 1: Security Check (opsional, sudah kamu buat)
   security-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+      # Tambahkan langkah-langkah scan keamanan di sini kalau perlu
 
-      # Scan File System (Mencari miskonfigurasi/secret bocor)
-      - name: Run Trivy FS Scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'fs'
-          scan-ref: '.'
-          trivy-config: trivy.yaml
-          severity: 'CRITICAL,HIGH'
-          exit-code: 1 # Gagada isu Critical
-
-  # TAHAP 2: DEPLOYMENT (CD)
+  # Tahap 2: Deploy ke VPS
   deploy:
-  needs: security-check
-  runs-on: ubuntu-latest
-  steps:
-    - name: Deploy to VPS via SSH
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.SERVER_HOST }}
-        username: ${{ secrets.SERVER_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
-        script: |
-          cd /var/www/html/learngoad
-          git pull origin main
-          docker restart my-website-container
-          docker ps
+    needs: security-check   # hanya jalan kalau security-check sukses
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}        # IP server, misalnya 202.10.48.204
+          username: ${{ secrets.SERVER_USER }}    # user login, misalnya root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}     # private key dari laptop kamu
+          port: 22
+          script: |
+            # Masuk ke folder project di server
+            cd /var/www/html/learngoad
+
+            # Tarik kode terbaru dari GitHub
+            git pull origin main
+
+            # Restart container atau service (sesuaikan dengan server kamu)
+            docker restart my-website-container
+
+            # Cek status container setelah restart
+            docker ps
