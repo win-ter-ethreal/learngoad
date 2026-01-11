@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Static Site to GitHub Pages
 
 on:
   push:
@@ -26,18 +26,14 @@ jobs:
 
       - name: Prepare Pages content
         run: |
-          mkdir dist
-          cp -r * dist/
+          mkdir public
+          cp -r * public/
+          rm -rf public/.git public/.github
 
-      - name: Upload to GitHub Pages
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: public
 
-  publish:
-    needs: deploy
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
