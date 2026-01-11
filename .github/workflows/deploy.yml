@@ -1,39 +1,50 @@
-name: Deploy Static Site to GitHub Pages
+name: DevSecOps Pipeline
 
+# Trigger: Jalan setiap ada push ke branch main
 on:
   push:
-    branches:
-      - main
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches: [ "main" ]
 
 jobs:
-  deploy:
+  # TAHAP 1: KEAMANAN (CI)
+  security-check:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      - name: Lint HTML
-        run: |
-          sudo apt update
-          sudo apt install -y tidy
-          tidy -e *.html || true
-
-      - name: Prepare Pages content
-        run: |
-          mkdir public
-          cp -r * public/
-          rm -rf public/.git public/.github
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # Scan File System (Mencari miskonfigurasi/secret bocor)
+      - name: Run Trivy FS Scan
+        uses: aquasecurity/trivy-action@master
         with:
-          path: public
+          scan-type: 'fs'
+          scan-ref: '.'
+          trivy-config: trivy.yaml
+          severity: 'CRITICAL,HIGH'
+          exit-code: 1 # Gagal jika ada isu Critical
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+  # TAHAP 2: DEPLOYMENT (CD)
+  deploy:
+    needs: security-check # Hanya jalan jika security-check SUKSES
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            # Masuk ke folder project di server
+            cd /mnt/z/learngoad/learngoad-main
+            
+            # Tarik kode terbaru dari GitHub
+            git pull origin main
+            
+            # Restart Container (Contoh: Nginx/Web Server)
+            # Sesuaikan nama container kamu
+            docker restart my-website-container
+            
+            # Cek status container setelah restart
+            docker ps
